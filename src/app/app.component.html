@@ -1,3 +1,19 @@
 <h1>
   {{title}}
 </h1>
+
+<ng2-datepicker [options]="options" [(ngModel)]="date"></ng2-datepicker>
+
+<div style="display: block" class="tamaño">
+  <canvas baseChart
+              [data]="doughnutChartData"
+              [labels]="doughnutChartLabels"
+              [chartType]="doughnutChartType"
+              (chartHover)="chartHovered($event)"
+              (chartClick)="chartClicked($event)"></canvas>
+</div>
+
+<button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+    <div></div>
+    {{data | async}}    
